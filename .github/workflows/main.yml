@@ -40,7 +40,8 @@ jobs:
         AUTH: ${{ secrets.SEC3_KEY }}
       run: |
         echo "$AUTH" | base64 --decode > testsec.pem
+        mkdir ~/.ssh
+        echo echo "$AUTH" | base64 --decode > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
         chmod 400 testsec.pem
-        ssh -o StrictHostKeyChecking=no ubuntu@${{ env.HOST }}
         scp -i testsec.pem README.md ubuntu@${{ env.HOST }}:~/
-        ssh -o StrictHostKeyChecking=yes ubuntu@${{ env.HOST }}
