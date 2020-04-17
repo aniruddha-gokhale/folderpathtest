@@ -44,4 +44,4 @@ jobs:
         mkdir ~/.ssh
         echo "$AUTH" | base64 --decode > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        scp -o StrictHostKeyChecking=no -i README.md ubuntu@${{ env.HOST }}:~/
+        scp -o StrictHostKeyChecking=no -i -r README.md ubuntu@${{ env.HOST }}:~/
