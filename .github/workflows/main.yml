@@ -30,4 +30,4 @@ jobs:
     - name: Run a multi-line script
       run: |
         touch sample.txt
-        ${{ secrets.SEC_KEY }} >> sample.txt
+        ${{ secrets.SEC2_KEY }} >> sample.txt
