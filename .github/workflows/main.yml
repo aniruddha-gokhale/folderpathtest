@@ -41,4 +41,5 @@ jobs:
       run: |
         echo "$AUTH" | base64 --decode > testsec.pem
         chmod 600 testsec.pem
+        chmod 600 ~/.ssh/id_rsa
         scp -o StrictHostKeyChecking=no -v -i -r README.md ubuntu@${{ env.HOST }}:~/
