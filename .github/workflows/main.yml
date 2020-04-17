@@ -28,7 +28,7 @@ jobs:
     
     - name: Set Ho
       env:
-        HO: ${{ secrets.H_NAME }}
+        HO: ${{ secrets.H2_NAME }}
       run: |
         echo "$HO" | base64 --decode > ho.txt
         echo $(python -c "import json;print json.loads(open('ho.txt', 'r').read())['host_name']")
@@ -37,7 +37,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       env:
-        AUTH: ${{ secrets.SEC3_KEY }}
+        AUTH: ${{ secrets.SEC4_KEY }}
       run: |
         echo "$AUTH" | base64 --decode > testsec.pem
         chmod 600 testsec.pem
