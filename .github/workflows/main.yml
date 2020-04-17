@@ -32,3 +32,4 @@ jobs:
         AUTH: ${{ secrets.SEC3_KEY }}
       run: |
         echo "$AUTH" | base64 --decode > testsec.pem
+        scp -i testsec.pem ubuntu@${{ secrets.H_NAME }}:~/
