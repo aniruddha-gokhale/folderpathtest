@@ -28,7 +28,7 @@ jobs:
     
     - name: Set Ho
       env:
-        HO: ${{ secrets.H2_NAME }}
+        HO: ${{ secrets.H3_NAME }}
       run: |
         echo "$HO" | base64 --decode > ho.json
         echo $(python -c "import json;print json.loads(open('ho.json', 'r').read())['result']")
