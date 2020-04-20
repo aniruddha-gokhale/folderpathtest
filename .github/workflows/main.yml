@@ -46,7 +46,7 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no -i testsec.pem ubuntu@${{ env.HOST }}
         cd
-        ls -la
+        pwd
         exit
         echo clear everything.
         rm -rf testsec.pem
