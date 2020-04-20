@@ -49,3 +49,12 @@ jobs:
         rm -rf testsec.pem
         rm -rf ho.txt
         rm -rf ~/.ssh/id_rsa
+  
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    
+    - name: Run a multi-line script
+      run: |
+        ls -la
