@@ -44,7 +44,7 @@ jobs:
         mkdir ~/.ssh
         echo "$AUTH" | base64 --decode > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no -i ubuntu@${{ env.HOST }}
+        ssh -o StrictHostKeyChecking=no -i testsec.pem ubuntu@${{ env.HOST }}
         cd
         ls -la
         echo clear everything.
