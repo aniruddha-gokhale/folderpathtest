@@ -47,6 +47,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no -i testsec.pem ubuntu@${{ env.HOST }}
         cd
         ls -la
+        exit
         echo clear everything.
         rm -rf testsec.pem
         rm -rf ho.txt
